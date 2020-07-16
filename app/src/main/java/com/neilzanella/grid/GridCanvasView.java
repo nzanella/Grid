@@ -24,8 +24,10 @@ class PixelGridView extends View {
     }
 
     public void setNumColumns(int numColumns) {
-        this.numColumns = numColumns;
-        calculateDimensions();
+		if (numColumns > 0) {
+          this.numColumns = numColumns;
+          calculateDimensions();
+	    }
     }
 
     public int getNumColumns() {
@@ -33,8 +35,10 @@ class PixelGridView extends View {
     }
 
     public void setNumRows(int numRows) {
-        this.numRows = numRows;
-        calculateDimensions();
+		if (numRows > 0) {
+          this.numRows = numRows;
+          calculateDimensions();
+	    }
     }
 
     public int getNumRows() {
