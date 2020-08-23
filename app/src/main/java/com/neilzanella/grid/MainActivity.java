@@ -16,17 +16,18 @@ public class MainActivity extends Activity
 		super.onCreate(savedInstanceState);
 	
 		LinearLayout parent = new LinearLayout(this);
-		parent.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 		parent.setOrientation(LinearLayout.VERTICAL);
-   
+		
 		pixelGrid = new PixelGridView(this);
         pixelGrid.setNumColumns(4);
         pixelGrid.setNumRows(6);
 
 		LinearLayout buttonsLayout = new LinearLayout(this);
-
-		buttonsLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		buttonsLayout.setOrientation(LinearLayout.HORIZONTAL);
+		LinearLayout.LayoutParams buttonsLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		//buttonsLayoutParams.weight = 1.0f;
+		buttonsLayout.setLayoutParams(buttonsLayoutParams);
+	    buttonsLayout.setOrientation(LinearLayout.HORIZONTAL);
 
 		Button lessHButton = new Button(this);
 		Button moreHButton = new Button(this);
