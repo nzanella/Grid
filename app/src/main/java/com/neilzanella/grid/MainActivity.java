@@ -18,11 +18,20 @@ public class MainActivity extends Activity
 		LinearLayout parent = new LinearLayout(this);
 		parent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 		parent.setOrientation(LinearLayout.VERTICAL);
+	
+		LinearLayout canvasLayout = new LinearLayout(this);
+		LinearLayout.LayoutParams canvasLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+		canvasLayoutParams.weight = 1.0f;
+		canvasLayout.setLayoutParams(canvasLayoutParams);
+	    canvasLayout.setOrientation(LinearLayout.HORIZONTAL);
 		
+		//try placing this in a linear layout
 		pixelGrid = new PixelGridView(this);
         pixelGrid.setNumColumns(4);
         pixelGrid.setNumRows(6);
 
+		canvasLayout.addView(pixelGrid);
+		
 		LinearLayout buttonsLayout = new LinearLayout(this);
 		LinearLayout.LayoutParams buttonsLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		//buttonsLayoutParams.weight = 1.0f;
@@ -67,11 +76,11 @@ public class MainActivity extends Activity
 		buttonsLayout.addView(lessVButton);
 		buttonsLayout.addView(moreVButton);
 		
-		parent.addView(buttonsLayout);
-		parent.addView(pixelGrid);
-		
-		//parent.addView(pixelGrid);
 		//parent.addView(buttonsLayout);
+		//parent.addView(canvasLayout);
+		
+		parent.addView(canvasLayout);
+		parent.addView(buttonsLayout);
 		
         setContentView(parent);
     }
